@@ -10,9 +10,17 @@ import java.util.List;
 import static org.testng.reporters.Files.readFile;
 
 public class Json implements Speicherstrategie{
+
+    /**
+     * Default Konstruktor
+     */
     public Json() {
     }
 
+    /**
+     * Methode welche die Woerterpaare und Statistik in eine JSON Datei speichert
+     * @param rechtschreibtrainer Der Rechtschreibtrainer
+     */
     public void save(Rechtschreibtrainer rechtschreibtrainer) {
         List <Woerterpaare> woerterpaareList = rechtschreibtrainer.getWoerterpaare();
 
@@ -46,6 +54,11 @@ public class Json implements Speicherstrategie{
         System.out.println("JSON file created: " + jsonArray);
     }
 
+
+    /**
+     * Methode welche die Woerterpaare und Statistik aus einer JSON Datei lädt
+     * @param rechtschreibtrainer Der Rechtschreibtrainer
+     */
     public void load(Rechtschreibtrainer rechtschreibtrainer) {
 
         try {
