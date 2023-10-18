@@ -1,12 +1,18 @@
 package Worttrainer;
 
+import javax.swing.*;
+
 public class Woerterpaare {
     private String wort;
     private String url;
 
     public Woerterpaare(String wort, String url) {
-        this.wort = wort;
-        this.url = url;
+        if(wort == null || url == null) {
+            JOptionPane.showMessageDialog(null, "Wort oder URL ist null");
+        } else {
+            this.wort = wort;
+            this.url = url;
+        }
     }
 
     public String getWort() {
@@ -23,12 +29,5 @@ public class Woerterpaare {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public boolean check() {
-        if(this.wort == null || this.url == null) {
-            return false;
-        }
-        return true;
     }
 }
